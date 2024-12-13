@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница пользователя</title>
+    <style>
+        body {
+            background-image: url('https://colodu.club/uploads/posts/2022-11/thumbs/1667866086_2-colodu-club-p-sinyaya-kirpichnaya-stena-oboi-2.jpg');
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .editable {
+            cursor: pointer;
+            color: lightblue;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="username">Имя пользователя: <span class="editable" contenteditable="true">Иван Иванов</span></h1>
+        <p>Это мое профильное фото.</p>
+        <img src="https://i.pinimg.com/originals/ae/73/ad/ae73ad4c9aa5210598ab9c78b2a5fae1.jpg" alt="Профильное фото">
+        <p>Информация о пользователе: <span class="editable" contenteditable="true">Я веб-разработчик, увлекаюсь программированием и дизайном.</span></p>
+        <img src="https://habrastorage.org/files/f9d/d6f/d36/f9dd6fd36a1e4369ade81eff149f04c8.jpg" alt="Фото увлечения">
+        <p>Это фото моего увлечения.</p>
+        <!-- Кнопка для перехода по ссылке -->
+        <button onclick="window.location.href='https://www.youtube.com/@noxiYT'">Перейти на сайт</button>
+    </div>
+</body>
+</html>
