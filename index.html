@@ -6,6 +6,8 @@
     <title>Страница пользователя</title>
     <style>
         body {
+			cursor: url('https://img.icons8.com/?size=25&id=43727&format=png&color=000000'), auto; /* Укажите путь к вашему изображению курсора */
+			/* остальные стили... */
             background-image: url('https://colodu.club/uploads/posts/2022-11/thumbs/1667866086_2-colodu-club-p-sinyaya-kirpichnaya-stena-oboi-2.jpg');
             background-size: cover;
             color: white;
@@ -37,14 +39,27 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="username">Имя пользователя: <span class="editable" contenteditable="true">Иван Иванов</span></h1>
-        <p>Это мое профильное фото.</p>
+        <h1 id="username">Имя пользователя: <span class="editable" contenteditable="true" id="name">Иван Иванов</span></h1>
+		<p>Это мое профильное фото.</p>
         <img src="https://i.pinimg.com/originals/ae/73/ad/ae73ad4c9aa5210598ab9c78b2a5fae1.jpg" alt="Профильное фото">
-        <p>Информация о пользователе: <span class="editable" contenteditable="true">Я веб-разработчик, увлекаюсь программированием и дизайном.</span></p>
-        <img src="https://habrastorage.org/files/f9d/d6f/d36/f9dd6fd36a1e4369ade81eff149f04c8.jpg" alt="Фото увлечения">
+        <p>Информация о пользователе: <span class="editable" contenteditable="true" id="info">Я веб-разработчик, увлекаюсь программированием и дизайном.</span></p>
+		<img src="https://habrastorage.org/files/f9d/d6f/d36/f9dd6fd36a1e4369ade81eff149f04c8.jpg" alt="Фото увлечения">
         <p>Это фото моего увлечения.</p>
-        <!-- Кнопка для перехода по ссылке -->
-        <button onclick="window.location.href='https://www.youtube.com/@noxiYT'">Перейти на сайт</button>
+        <button onclick="saveChanges()">Сохранить изменения</button>
     </div>
+
+    <script>
+        // Загрузка имени и информации из localStorage
+        document.getElementById('name').innerText = localStorage.getItem('username') || 'Иван Иванов';
+        document.getElementById('info').innerText = localStorage.getItem('userinfo') || 'Я веб-разработчик, увлекаюсь программированием и дизайном.';
+
+        // Функция для сохранения изменений
+        function saveChanges() {
+            let username = document.getElementById('name').innerText;
+            let userinfo = document.getElementById('info').innerText;
+            localStorage.setItem('username', username); // Сохранение имени
+            localStorage.setItem('userinfo', userinfo); // Сохранение информации
+        }
+    </script>
 </body>
 </html>
